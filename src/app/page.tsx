@@ -1,113 +1,129 @@
 import Image from 'next/image'
+// Icon imports
+import toothIcon from '../../public/icons/tooth.svg'
+import nutritionalIcon from '../../public/icons/nutrition.svg'
+import vitalsIcon from '../../public/icons/vitals.svg'
+import medicineIcon from '../../public/icons/medicine.svg'
+import homeIcon from '../../public/icons/home.svg'
+import hospitalIcon from '../../public/icons/hospital.svg'
+import colonIcon from '../../public/icons/gastroenterology.svg'
+import oxygenIcon from '../../public/icons/oxygen.svg'
+import urologyIcon from '../../public/icons/urology.svg'
+import toiletIcon from '../../public/icons/letrina_alt.svg'
+import wheelchairIcon from '../../public/icons/wheelchair.svg'
+import bladderIcon from '../../public/icons/bladder.svg'
+import cleaningIcon from '../../public/icons/cleaning.svg'
+
+import img1 from "../../public/img1.jpg"
+import { ReactNode } from 'react'
+
+const services = [
+  {
+    text: "Oral Hygiene",
+    icon: toothIcon
+  },
+  {
+    text: "Meal Planning & Prep",
+    icon: nutritionalIcon
+  },
+  {
+    text: "Medication Reminders",
+    icon: medicineIcon
+  },
+  {
+    text: "Home Safety Supervision",
+    icon: homeIcon
+  },
+  {
+    text: "Measuring Vitals",
+    icon: vitalsIcon
+  },
+  {
+    text: "Hospital Discharge Assistance",
+    icon: hospitalIcon
+  },
+  {
+    text: "Monitor Oxygen Use",
+    icon: oxygenIcon
+  },
+  {
+    text: "Colostomy Care",
+    icon: colonIcon
+  },
+  {
+    text: "Foley Catheter & Perineal",
+    icon: urologyIcon
+  },
+  {
+    text: "Toileting & Incontinence",
+    icon: toiletIcon
+  },
+  {
+    text: "Transfers & Mobility",
+    icon: wheelchairIcon
+  }, 
+  {
+    text: "Bowel & Bladder Problems",
+    icon: bladderIcon
+  },
+  {
+    text: "Housekeeping & Laundry",
+    icon: cleaningIcon
+  }
+]
+import {Montserrat, Inconsolata, Cabin } from 'next/font/google'
+const monst = Montserrat({ subsets:  ['latin']})
+const incon = Cabin({ subsets:  ['latin']})
+const H1 = ({children, className} : {children: ReactNode, className: string}) => {
+  return (
+    <h1 className={`${incon.className} ${className}`}>{children}</h1>
+  )
+}
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="min-h-screen">
+      <div className='flex flex-col lg:flex-row h-full justify-center items-center'>        
+        <Image className='h-full w-full lg:max-w-[50%]'  src={img1} alt="image 1"/>
+        <div className='px-4 flex flex-col items-center justify-center gap-4'>
+          <H1 className='text-center text-2xl md:text-3xl my-4'>Divine Healthcare is dedicated to providing you and your family peace of mind.</H1>
+          <p>DHS has full-time professional staff to care for the needs of every client with special attention to every detail. DHS provides a 24-hour Care-Line with trained professionals ready to help day or night for our sick, elderly, and disabled clients.
+            We have trained nurse's assistants for Private Duty cases or Live-in services.</p>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <section className='my-6 bg-blue-700 text-white p-4 text-center m-4 rounded-xl'>
+        <h2 className='text-center text-xl md:text-2xl my-4'>We offer a special touch of compassion and love to every client and recognize each of our clients by name.</h2>
+        <p>To us, you are not just a number. We treat all of our clients with dignity and respect.</p>
+      </section>
+      <section className='my-6'>
+        <h2 className='text-center text-xl md:text-2xl my-4'>Professional Care Services</h2>
+        <div className='flex flex-wrap gap-4 items-center justify-center'>
+          { services.map(service =>
+            <div key={service.text} className='flex flex-col justify-center place-items-center text-center w-full max-w-[150px]'>
+              <Image src={service.icon} alt={service.text} className='h-16 w-16'/>
+              <div>{service.text}</div>
+            </div>
+          )}
+        </div>
+      </section>
+      <section>
+        <h2 className='text-center text-xl md:text-2xl my-4'>Did you know?</h2>
+        <ul>
+          <li>70% of patients who receive in-home care recover more quickly.</li>
+          <li>In-home care saves the average family up to 40% in hospital/rehabilitation center overnight stays.</li>
+          <li>Divine Healthcare Services will design a Care Plan to specifically fit your loved ones needs.</li>
+          <li>DHS has a 24-hour Care Line with experienced professionals on duty.</li>
+          <li>DHS provides minor medical and non-medical services.</li>
+          <li></li>
+        </ul>
+• 
+• We accept adults & children
+with disabilities.
+• We accept Medicaid, private insurance,
+and all major credit cards.
+• We accept Cap/C, Cap/D, PCS,
+and private pay.
+      </section>
     </main>
   )
 }
