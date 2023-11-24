@@ -16,7 +16,7 @@ import wheelchairIcon from '../../public/icons/wheelchair.svg'
 
 export const services = [
   {
-    text: "Oral Hygiene",
+    text: "Dental Hygiene",
     icon: toothIcon
   },
   {
@@ -36,7 +36,7 @@ export const services = [
     icon: vitalsIcon
   },
   {
-    text: "Hospital Discharge Assistance",
+    text: "Discharge Assistance",
     icon: hospitalIcon
   },
   {
@@ -60,7 +60,7 @@ export const services = [
     icon: wheelchairIcon
   }, 
   {
-    text: "Bowel & Bladder Problems",
+    text: "Bowel & Bladder",
     icon: bladderIcon
   },
   {
