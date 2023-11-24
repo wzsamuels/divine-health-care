@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${monst.className} min-h-screen relative bg-white text-black overflow-x-hidden`}>
         <Nav/>
-        <main className="pb-16">
+        <main className="pt-4 pb-16 max-w-6xl min-h-screen mx-auto">
           {children}
         </main>
         <footer className='text-center absolute bottom-0 w-full text-[.9rem] md:text-base p-1 md:p-4 '>
