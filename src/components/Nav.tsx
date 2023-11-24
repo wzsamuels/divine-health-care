@@ -13,18 +13,6 @@ const navItems = [
   {
     text: "About",
     href: "/about"
-  },
-  {
-    text: "Community",
-    href: "/community"
-  },
-  {
-    text: "Programs",
-    href: "/events"
-  },
-  {
-    text: "Coaching",
-    href: "/coaching"
   }
 ]
 
@@ -59,25 +47,18 @@ const Nav = () => {
     };
   }, []);
 
-  const navClass = scrollPosition > 0 ? "bg-white text-themeGreen" : "bg-themeGreen text-white";
-
   return (
     <>
-      <nav className={`${navClass} w-full flex justify-between h-16 sticky top-0 z-20`}>
-          <div className="flex">
+      <nav className={`bg-themeBlue text-white w-full flex justify-between h-16 top-0 z-20`}>
+        <div className="flex flex-1">
+          <button onClick={handleSidebarTrigger} className={'md:hidden justify-self-start text-2xl p-4'}>☰</button>
+          <Link href='/' className="flex flex-col justify-center items-center py-1 px-2">
+            <div className="text-4xl">DHS</div>
+            <div className="">Divine Healthcare Services</div>
+          </Link>
 
-            <button onClick={handleSidebarTrigger} className={'md:hidden justify-self-start text-2xl p-4'}>☰</button>
-            <Link href='/'>
-              {
-                scrollPosition > 0 ?
-                <Image src={logoLight} className='h-full w-auto' alt="DPS Logo"/>
-                :
-                <Image src={logo} className='h-full w-auto' alt="DPS Logo"/>
-              }
-            </Link>
-
-          </div>
-        <div className='md:flex items-center justify-center w-full hidden'>
+        </div>
+        <div className='md:flex items-center justify-center w-full hidden flex-1'>
           {navItems.map((item, index) =>
               <Link               key={index}
                 className={`px-4 py-2 mx-1 relative after:transition after:absolute after:w-full after:right-1/2
